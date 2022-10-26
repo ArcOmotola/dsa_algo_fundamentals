@@ -1,22 +1,40 @@
-// Array.matrix = function (numrows, numcols, intial) {
-//   let arr = [];
-//   for (let i = 0; i < numrows; ++i) {
-//     let columns = [];
-//     for (let j = 0; j < numcols; ++j) {
-//       columns[j] = initial;
-//     }
-//     arr[i] = columns;
+// const gfg = new Array(5);
+
+// console.log({ gfg });
+
+// for (let i = 0; i < gfg.length; i++) {
+//   gfg[i] = new Array(2);
+//   console.log({ i });
+// }
+
+// for (var i = 0; i < 2; i++) {
+//   for (var j = 0; j < 2; j++) {
+//     document.write(gfg[i][j] + " ");
 //   }
-//   return arr;b
-// };
+//   // document.write("<br>");
+// }
 
-// const nums = Array.matrix(5, 5, 0);
-// print(nums[1][1]);
+// Create one dimensional array
+var gfg = new Array(5);
+console.log({ gfg });
 
-var grades = [
-  [89, 77, 78],
-  [76, 82, 81],
-  [91, 94, 89],
-];
-console.log(grades[2][2]); // displays 89
-console.log(grades.length); //3
+// Loop to create 2D array using 1D array
+for (var i = 0; i < gfg.length; i++) {
+  gfg[i] = new Array(2);
+}
+
+var h = 0;
+
+// Loop to initialize 2D array elements.
+for (var i = 0; i < 2; i++) {
+  for (var j = 0; j < 2; j++) {
+    gfg[i][j] = h++;
+  }
+}
+
+// Loop to display the elements of 2D array.
+for (var i = 0; i < 2; i++) {
+  for (var j = 0; j < 2; j++) {
+    console.log(gfg[i][j] + " ");
+  }
+}
