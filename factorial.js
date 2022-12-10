@@ -6,7 +6,7 @@ function factorial(n) {
   return result;
 }
 
-//test cases...
+//test cases..
 
 console.log(factorial(0)); //1
 console.log(factorial(1)); //1
