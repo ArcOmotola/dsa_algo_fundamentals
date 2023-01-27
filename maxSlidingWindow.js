@@ -45,7 +45,7 @@
 //   for (let i = 0; i < windowSize; i++) {
 //     //for every elemnt, remove the previous smaller elements from window
 //   }
-// };
+// }
 
 // [3, 4, 5, 6, 7, 8, 9, 10];
 
