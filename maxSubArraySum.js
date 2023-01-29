@@ -29,7 +29,7 @@ function maxSubArraySum(nums, size) {
   }
 
   let currSum = 0;
-  let maxSumSeen = -Infinity; //should in case we have a negative sum
+  let maxSumSeen = -Infinity; //should in case we have a negative sum.
 
   for (let i = 0; i < nums.length - 1; i++) {
     currSum += nums[i]; //adds next item in subarray after summing in each iteration
