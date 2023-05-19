@@ -77,3 +77,16 @@ def minimun_index(lst):
 # Driver code to test above
 min = minimun_index(nums)
 print("Minimun number in the list is", nums[min], "at the index ", min)
+
+#///////////////////////////////////////////////////////////////////////////////////////////
+
+# n = 5  # n can be anything
+# sum = 0
+# for i in range(n):
+#     for j in range(n):
+#         sum += 1
+
+# print(sum)
+
+#///////////////////////////////////////////////////////////////////////////////////////////
+
