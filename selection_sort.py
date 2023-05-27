@@ -10,6 +10,7 @@ def findSmallest(arr):
       smallest_index = i
   return smallest_index
 
+# apply this function in a selection sort algorithm
 
 def selectionSort(arr):
   newArr = []
@@ -19,10 +20,9 @@ def selectionSort(arr):
     newArr.append(arr.pop(smallest))
   return newArr
 
-  
+print (selectionSort([5, 3, 6, 2, 10]))
 
 
 # nums = [2, 4, 6, 3, 5, 7, 9, 1, 8]
 
 # print("number is at index", findSmallest(nums))
-  
