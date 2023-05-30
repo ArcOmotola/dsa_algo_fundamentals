@@ -1,4 +1,5 @@
 # write a function to find the smallest element in an array
+#The selection sort has a time complexity of O(n^2) 
 
 def findSmallest(arr):
   smallest = arr[0]
