@@ -4,7 +4,7 @@ def quicksort(array):
     return array
   else:
     pivot = array[0]
-    smaller = [ i for i in array[1:] if i <= pivot]        #Sub-array of all the elements less than the pivot
+    smaller = [ i for i in array[1:] if i <= pivot]        #Sub-array of all the elements less than the pivot using a list comprehension
     greater = [ i for i in array[1:] if i > pivot]         #Sub-array of all the elements greater than the pivot
 
     return quicksort(smaller) + [pivot] + quicksort(greater)
