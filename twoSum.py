@@ -117,3 +117,14 @@ print(two_sum([1, 2, 3, 4, 5], 6))
 # Negative Numbers in the Array: What if the input array contains negative numbers? The provided solution works for arrays with negative numbers as well. The hashmap approach handles both positive and negative numbers effectively.
 
 # No Valid Solution: What if there is no valid solution in the array that sums up to the target? The provided solution returns None in such cases. This can be adjusted as per the requirements, such as returning an empty list or a specific message indicating the absence of a valid solution.
+
+
+
+
+
+# Here is a table that summarizes the time complexity of the different approaches for the 2 sum problem:
+
+# Approach	Time Complexity
+# Brute force	O(n^2)
+# Hash table	O(n)
+# Binary search (sorted array)	O(log n)
