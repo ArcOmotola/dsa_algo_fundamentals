@@ -15,6 +15,7 @@ def findSmallest(arr):
 
 def selectionSort(arr):
   newArr = []
+  # while len(arr) > 0:
   for i in range (len(arr)):
     smallest = findSmallest(arr)
 

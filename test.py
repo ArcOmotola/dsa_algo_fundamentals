@@ -1,18 +1,22 @@
-def is_valid_parentheses(s):
-
-  stack = []
-  opening_brackets = ["(", "[", "{"]
-  closing_brackets = [")", "]", "}"]
-  bracket_map = { ")" : "(", "]" : "[", "}" : "{"}
-
-  for char in s:
-    if char in opening_brackets:
-      stack.append(char)
-    elif char in closing_brackets:
-      if len(stack) == 0 or stack.pop() != bracket_map[char]:
-        return False
-
-  return len(stack) == 0
+def find_smallest_index(arr):
+  lowest = arr[0]
+  lowest_index = 0
+  
+  for i in range(1, len(arr)):
+    if arr[i] < lowest:
+      lowest = arr[i]
+      lowest_index = i
+  return lowest_index
 
 
-print(is_valid_parentheses("()[]"))
+def selectionSort(arr):
+  sorted = []
+  while len(arr) > 0:
+    lowest = find_smallest_index(arr)
+    sorted.append(arr.pop(lowest))
+  return sorted
+
+
+
+
+print (selectionSort([5, 20, 3, 1, 2, 10, 10, 4]))
