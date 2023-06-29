@@ -37,7 +37,7 @@ def merge(left, right):
   # Compare elements from the left and right halves and add the smaller element to the merged list
   while left_index < len(left) and right_index < len(right):
     if left[left_index] < right[right_index]:
-      merged.append(left[left_])
+      merged.append(left[left_index])
 
 
 
