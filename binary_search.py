@@ -14,7 +14,7 @@ def binary_search(list, item):
       low = mid + 1
   return None
 
-# Driver code to test above
+# Driver code to test the above
 
 my_list = [1, 3 , 5, 7, 9]
 
