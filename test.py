@@ -1,55 +1,10 @@
-def plusOne(digits):
-  last_idx = len(digits) - 1
-
-  for i in digits:
-    digits[last_idx] += 1
-
-    # if len(digits) == 1 and digits[0] == 10:
-    #   digits.append(0)
-    #   digits[last_idx - 1] = 1 
-
-    # if digits[last_idx] == 10:
-    #   digits[last_idx] == 0
-    #   # digits.append(0)
-    #   digits[i - 1] += 1
-
-  return digits
-
-print(plusOne([1, 4, 9]))
+# Given an array of integers, find the longest increasing subsequence in the array. 
+# A subsequence is a sequence of elements in the array that are in order, but not necessarily contiguous.
 
 
+# Given an integer array nums, return the length of the longest strictly increasing 
+# subsequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-# def increment_integer(digits):
-#     carry = 1
-#     i = len(digits) - 1
-#     while i >= 0:
-#         digits[i] += carry
-#         if digits[i] == 10:
-#             digits[i] = 0
-#             carry = 1
-#         else:
-#             carry = 0
-#         i -= 1
-
-#     if carry == 1:
-#         digits.append(1)
-
-#     return digits
-
-# print(increment_integer([9,9,9]))
-
-
-
-
+def lengthOfLIS(nums):
+    
+  
