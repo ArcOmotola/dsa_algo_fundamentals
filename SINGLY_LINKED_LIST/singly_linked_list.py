@@ -58,6 +58,26 @@ class SinglyLinkedList:
         prev_node.next = new_node              # change the next pointer of the prev_node to point to the new node
         
 
+    def delete_node_position(self, position):
+        if self.head is None:
+          return
+        if position == 0:
+          self.head = self.head.next
+          return
+        
+        current_node = self.head
+        for _ in range(position - 1):
+            if current_node is None or current_node.next is None:
+                raise IndexError("Invalid position")
+            current_node = current_node.next
+            current_node.next = current_node.next.next
+        
+        
+    def delete_node_position(self, position):
+        cure_node = self.head
+    
+
+
     def print_list(self):
         cur_node = self.head
         while cur_node:          # Then we use a while loop which keeps running and printing the data if cur_node is not equal to None.
