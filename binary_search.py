@@ -40,3 +40,21 @@ print (binary_search(my_list, 5))
 #       low = mid + 1
 #   return None
 
+
+
+
+
+
+# RECURSIVE APPROACH
+
+def binary_search_recursive(data, target, low, high):
+	if low > high:
+		return False
+	else:
+		mid = (low + high) // 2
+		if target == data[mid]:
+			return True
+		elif target < data[mid]:
+			return binary_search_recursive(data, target, low, mid-1)
+		else:
+			return binary_search_recursive(data, target, mid+1, high)
