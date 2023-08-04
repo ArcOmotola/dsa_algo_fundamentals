@@ -1,3 +1,9 @@
+# we will be given an array that is bitonically sorted, an array that starts off with increasing 
+# terms and then concludes with decreasing terms. In any such sequence, there is a “peak” element 
+# which is the largest element in the sequence. We will be writing a solution to help us find the peak 
+# element of a bitonic sequence.
+
+
 def find_highest_number(arr):
     low = 0
     high = len(arr) - 1
