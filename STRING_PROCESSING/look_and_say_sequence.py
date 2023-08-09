@@ -185,16 +185,16 @@ def countAndSay(n):
 
 
 
-n = 8
-print(countAndSay(n))
+# n = 8
+# print(countAndSay(n))
 
 
 
-    if i == previous:
-        count += 1
+#     if i == previous:
+#         count += 1
 
 
-    else:
-        next = str(count) + previous
+#     else:
+#         next = str(count) + previous
 
-next = str(count) + previous
+# next = str(count) + previous
