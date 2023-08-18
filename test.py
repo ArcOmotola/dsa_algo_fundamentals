@@ -73,7 +73,7 @@ def findMaxConsecutiveOnes(nums):
   count = 0
   for i in range(len(nums)):
       if nums[i] == 1:
-          count = +1
+          count += 1
           if nums[i+1] != 1:
               current_max = count
   return max(count, current_max)
