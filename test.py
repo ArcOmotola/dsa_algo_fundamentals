@@ -71,13 +71,41 @@
 
 def findMaxConsecutiveOnes(nums):
   count = 0
+  curr_max = 0
+  # current_count = 0
+  # count = {}
   for i in range(len(nums)):
       if nums[i] == 1:
           count += 1
-          if nums[i+1] != 1:
-              current_max = count
-  return max(count, current_max)
+      # if nums[i] == 0:
+      else:
+          max_count = 
+          old_max = count
+          count[i] = 0
+
+          if nums[i+1] != 1 and i < len(nums) - 1:
+              curr_max = count
+
+  
+  #         if nums[i+1] != 1:
+  #             current_max = count
+  # return max(count, current_max)
 
 
 
-print(findMaxConsecutiveOnes([1,1,0,1,1,1]))
+# print(findMaxConsecutiveOnes([1,1,0,1,1,1]))
+
+def max_consecutive_ones(nums):
+    max_count = 0
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] == 1:
+            count += 1
+        else:
+            max_count = max(max_count, count)
+            count = 0
+    max_count = max(max_count, count)
+    return max_count
+
+
+print(max_consecutive_ones([1,1,0,1,1,1]))
