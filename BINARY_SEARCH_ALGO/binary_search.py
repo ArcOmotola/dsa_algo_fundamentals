@@ -16,9 +16,9 @@ def binary_search(list, item):
 
 # Driver code to test the above
 
-my_list = [1, 3 , 5, 7, 9]
+# my_list = [1, 3 , 5, 7, 9]
 
-print (binary_search(my_list, 5))
+# print (binary_search(my_list, 5))
 
 
 
@@ -63,3 +63,25 @@ def binary_search_recursive(list, target, low, high):
 # target = 37
 
 # print(binary_search_recursive(list, target, 0, len(list)-1))
+
+
+
+
+
+
+# If the target exists, returns its leftmost index.
+# Else, returns the index of where it should be.
+def binarySearch(nums, target):
+    l, r = 0, len(nums)
+    while l < r :
+        m = (l + r) // 2
+        if nums[m] < target:
+            l = m + 1
+        else: 
+            r = m
+    return l
+
+
+my_list = [1, 3 , 5, 7, 9]
+
+print (binarySearch(my_list, 5))
