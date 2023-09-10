@@ -1,78 +1,94 @@
-# def checkIfExist(arr):
+# def removeElement(nums, val):
+#     l = 0
+#     count = 0
+#     for i in range(len(nums)):
+#         if nums[i] != val:
+#            count += 1
+#            nums[l], nums[i] = nums[i], nums[l] 
+#            l += 1
 
-#     hash_table = {}
-#     double = 0
+#     return count
 
-#     for i in range(len(arr)):
-#       hash_table[arr[i]] = i
-
-#     for j in range(len(arr)):
-#       double = 2 * arr[j]
-#     if double in hash_table and hash_table[double] != j:
-#       return True
-
-#     return False
-
-
-# print(checkIfExist([-2,0,10,-19,4,6,-8]))
+# arr = [0,1,2,2,3,0,4,2]
+# print(removeElement(arr, 2))
 
 
 
 
 
-# class Solution:
-#     def replaceElements(self, arr: List[int]) -> List[int]:
-#         if len(arr) == 1:
-#             arr[0] = -1
-            
-#         i = 0
-#         j = i+1
-            
-#         while j <= len(arr) - 1:
-#             if arr[j] > arr[i]:
-#                 arr[i] = arr[j]
+
+# def removeElement(nums, val):
+#     k = 0
+#     for i in range(len(nums)):
+#         if nums[i] != val:
+#             nums[k] = nums[i]
+#             k += 1
+
+#     return nums
+
+# arr = [0,1,2,2,3,0,4,2]
+# print(removeElement(arr, 2))
+
+
+# def maxConsecutiveOnes(nums):
+#     max_count = 0  # Maximum consecutive ones count
+#     left = 0  # Left pointer of the window
+#     zero_count = 0  # Count of zeros within the window
+
+#     for right in range(len(nums)):
+#         if nums[right] == 0:
+#             zero_count += 1
+
+#         while zero_count > 1:
+#             if nums[left] == 0:
+#                 zero_count -= 1
+#             left += 1
+
+#         max_count = max(max_count, right - left + 1)
+
+#     return max_count
+
+
+# print(maxConsecutiveOnes([1,0,1,1,0,1,1,1])
+
+
+
+
+
+
+
+
+def pivotIndex(nums):
+    
+    mid_idx = len(nums)//2
+    
+    for i in range(len(nums)):           
+        
+        arr_left = [i for i in nums[:mid_idx]]
+        arr_right = [i for i in nums[mid_idx + 1: ]]
+        
+        leftSum = sum(arr_left)
+        rightSum = sum(arr_right)
+        
+        if mid_idx == 0 and rightSum == 0:
+            return 0
+        
+        if mid_idx == len(nums)-1 and leftSum == 0:
+            return 0
+        
+        while 0 < mid_idx and mid_idx < len(nums)-1:               
+            if rightSum == leftSum:
+                return mid_idx
+
+            elif rightSum > leftSum:
+                mid_idx -= 1
                 
-#                 if j < len(arr) - 1:
-#                     j += 1
-                
-#             elis:
-#                 j == len(arr)-1
-#                 i += 1
-               
-                
-#             else:
-#                 i == len(arr) - 1:
-#                 arr[len(arr)-1] = -1
+            else:
+                mid_idx += 1
             
+    return -1
 
 
+print(pivotIndex([1,2,3]))
 
 
-# def printNums(arr):
-#   for i in range(len(arr)-1,-1,-1):
-#     arr[i] = 0
-#     return arr
-
-
-# arr=[2,3,5,1,7,8,9]
-# print(printNums(arr))
-
-
-
-def replaceElements(self, arr: List[int]) -> List[int]:
-    n = len(arr)
-    
-    if n == 1:
-        return [-1]
-    
-    largest = arr[n - 1]  # Initialize largest as the last element
-    arr[n - 1] = -1  # Replace the last element with -1
-    
-    for i in range(n - 2, -1, -1):
-        temp = arr[i]  # Store the current element in temp
-        arr[i] = largest  # Replace the current element with the largest
-        largest = max(largest, temp)  # Update the largest if necessary
-    
-    return arr
-
-print(replaceElements([17,18,5,4,6,1]))
