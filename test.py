@@ -1,94 +1,103 @@
-# def removeElement(nums, val):
-#     l = 0
-#     count = 0
-#     for i in range(len(nums)):
-#         if nums[i] != val:
-#            count += 1
-#            nums[l], nums[i] = nums[i], nums[l] 
-#            l += 1
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
 
-#     return count
+    # Sort the array to ensure the shortest string comes first.
+    strs.sort()
 
-# arr = [0,1,2,2,3,0,4,2]
-# print(removeElement(arr, 2))
+    # Consider the first and last strings (since they are sorted).
+    first_str = strs[0]
+    last_str = strs[-1]
 
+    # Find the common prefix between the first and last strings.
+    common_prefix = []
+    for i in range(len(first_str)):
+        if i < len(last_str) and first_str[i] == last_str[i]:
+            common_prefix.append(first_str[i])
+        else:
+            break
 
+    return "".join(common_prefix)
 
-
-
-
-# def removeElement(nums, val):
-#     k = 0
-#     for i in range(len(nums)):
-#         if nums[i] != val:
-#             nums[k] = nums[i]
-#             k += 1
-
-#     return nums
-
-# arr = [0,1,2,2,3,0,4,2]
-# print(removeElement(arr, 2))
-
-
-# def maxConsecutiveOnes(nums):
-#     max_count = 0  # Maximum consecutive ones count
-#     left = 0  # Left pointer of the window
-#     zero_count = 0  # Count of zeros within the window
-
-#     for right in range(len(nums)):
-#         if nums[right] == 0:
-#             zero_count += 1
-
-#         while zero_count > 1:
-#             if nums[left] == 0:
-#                 zero_count -= 1
-#             left += 1
-
-#         max_count = max(max_count, right - left + 1)
-
-#     return max_count
-
-
-# print(maxConsecutiveOnes([1,0,1,1,0,1,1,1])
+# Example usage:
+strings = ["flower", "flour", "flourish"]
+# result = longest_common_prefix(strings)
+# print(result)  # Output will be "flo"
+# print(min(strings, key=len))
 
 
 
 
+def longestCommonPrefix(strs):
+    # Check for an empty input list
+    if not strs:
+        return ""
 
-
-
-
-def pivotIndex(nums):
+    # Find the shortest string in the list using the min function
+    shortest = min(strs, key=len)
     
-    mid_idx = len(nums)//2
-    
-    for i in range(len(nums)):           
-        
-        arr_left = [i for i in nums[:mid_idx]]
-        arr_right = [i for i in nums[mid_idx + 1: ]]
-        
-        leftSum = sum(arr_left)
-        rightSum = sum(arr_right)
-        
-        if mid_idx == 0 and rightSum == 0:
-            return 0
-        
-        if mid_idx == len(nums)-1 and leftSum == 0:
-            return 0
-        
-        while 0 < mid_idx and mid_idx < len(nums)-1:               
-            if rightSum == leftSum:
-                return mid_idx
+    # Initialize an empty prefix string
+    prefix = ""
 
-            elif rightSum > leftSum:
-                mid_idx -= 1
-                
-            else:
-                mid_idx += 1
-            
-    return -1
+    # Iterate through the characters of the shortest string
+    for i in range(len(shortest)):
+        char = shortest[i]
+        
+        # Check if the character exists in the same position of all other strings
+        for s in strs:
+            if s[i] != char:
+                return prefix  # If not, return the current prefix
+        prefix += char  # If it exists in all strings, add it to the prefix
+
+    return prefix
 
 
-print(pivotIndex([1,2,3]))
+
+strings = ["flower", "flour", "flourish"]
+result = longestCommonPrefix(strings)
+print(result)  # Output will be "flo"
 
 
+
+
+
+
+
+def longest_common_prefix(strings):
+  """
+  Finds the longest common prefix string amongst an array of strings.
+
+  Args:
+    strings: An array of strings.
+
+  Returns:
+    The longest common prefix string, or an empty string "" if there is no common prefix.
+  """
+
+  if not strings:
+    return ""
+
+  shortest_string = min(strings, key=len)
+  prefix = ""
+  for i in range(len(shortest_string)):
+    matched = True
+    for string in strings:
+      if string[i] != shortest_string[i]:
+        matched = False
+        break
+
+    if not matched:
+      break
+
+    prefix += shortest_string[i]
+
+  return prefix
+
+
+def main():
+  strings = ["doser", "door", "done"]
+  print(longest_common_prefix(strings))
+
+
+if __name__ == "__main__":
+  main()
