@@ -36,6 +36,7 @@ print(two_sum([3,2,4], 6))
 
 
 
+
 # What if the array contains duplicate elements?
 # In the case of an array that contains duplicate elements, the solution can be modified to check if the complement of the current key is already in the hash table, even if it is already associated with a different index. For example, the following code:
 def two_sum(nums, target):

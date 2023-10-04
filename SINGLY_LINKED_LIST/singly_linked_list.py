@@ -98,3 +98,115 @@ llist.print_list()
 
 
 
+
+
+
+
+
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# class MyLinkedList:
+
+#     def __init__(self):
+#         self.head = None  # Initialize an empty linked list
+#         self.size = 0
+
+#     def get(self, index: int) -> int:
+#         if index < 0 or index >= self.size:
+#             return -1  # Index is invalid
+#         curr = self.head
+#         for _ in range(index):
+#             curr = curr.next
+#         return curr.val
+
+#     def addAtHead(self, val: int) -> None:
+#         new_node = ListNode(val, self.head)
+#         self.head = new_node
+#         self.size += 1
+
+#     def addAtTail(self, val: int) -> None:
+#         new_node = ListNode(val)
+#         if not self.head:
+#             self.head = new_node
+#         else:
+#             curr = self.head
+#             while curr.next:
+#                 curr = curr.next
+#             curr.next = new_node
+#         self.size += 1
+
+#     def addAtIndex(self, index: int, val: int) -> None:
+#         if index < 0 or index > self.size:
+#             return  # Index is out of bounds
+#         if index == 0:
+#             self.addAtHead(val)
+#         else:
+#             new_node = ListNode(val)
+#             curr = self.head
+#             for _ in range(index - 1):
+#                 curr = curr.next
+#             new_node.next = curr.next
+#             curr.next = new_node
+#             self.size += 1
+
+#     def deleteAtIndex(self, index: int) -> None:
+#         if index < 0 or index >= self.size:
+#             return  # Index is invalid
+#         if index == 0:
+#             self.head = self.head.next
+#         else:
+#             curr = self.head
+#             for _ in range(index - 1):
+#                 curr = curr.next
+#             curr.next = curr.next.next
+#         self.size -= 1
+
+
+
+
+
+
+
+
+
+# class Node:
+#   def __init__(self, val):
+#     self.val = val
+#     self._next = None
+
+#   def get_next(self):
+#     return self._next
+
+#   def set_next(self, node):
+#     self._next = node
+
+# class LinkedList:
+#   def __init__(self):
+#     self._head = None
+
+#   def add_at_head(self, val):
+#     new_node = Node(val)
+#     new_node.set_next(self._head)
+#     self._head = new_node
+
+#   def get_head(self):
+#     return self._head
+
+#   def traverse(self):
+#     current_node = self._head
+#     while current_node is not None:
+#       print(current_node.val)
+#       current_node = current_node.get_next()
+
+# # Example usage:
+
+# linked_list = LinkedList()
+
+# linked_list.add_at_head(1)
+# linked_list.add_at_head(2)
+# linked_list.add_at_head(3)
+
+# linked_list.traverse()
