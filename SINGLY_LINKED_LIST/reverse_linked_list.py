@@ -1,16 +1,18 @@
-def reverse_linked_list(head):
-  
-  prev = None
-  curr = head
-  next = None
+def traverse_circular_linked_list(head):
+  """Traverses a circular linked list.
 
-  while curr is not None:
-    next = curr.next
-    curr.next = prev
-    prev = curr
-    curr = next
+  Args:
+    head: The head of the circular linked list.
+  """
 
-  return prev
+  current_node = head
+
+  while current_node != head:
+    print(current_node.val)
+    current_node = current_node.next
+
+  print("222>>",current_node.val)
+
 
 
 class Node:
@@ -21,9 +23,7 @@ class Node:
 head = Node(1)
 head.next = Node(2)
 head.next.next = Node(3)
+head.next.next.next = head
 
-# The linked list is reversed.
-reversed_head = reverse_linked_list(head)
-
-
-print(reversed_head.val)
+# The circular linked list is traversed and the data of each node is printed.
+traverse_circular_linked_list(head)

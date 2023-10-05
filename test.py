@@ -1,29 +1,31 @@
-def reverse_linked_list(head):
-  
-  prev = None
-  curr = head
-  next = None
-
-  while curr is not None:
-    next = curr.next
-    curr.next = prev
-    prev = curr
-    curr = next
-
-  return prev
+def find_length_of_loop_in_linked_list(head):
+    
 
 
-class Node:
-  def __init__(self, val = 0):
-    self.val = val
-    self.next = None
-
-head = Node(1)
-head.next = Node(2)
-head.next.next = Node(3)
-
-# The linked list is reversed.
-reversed_head = reverse_linked_list(head)
 
 
-print(reversed_head.val)
+
+class Solution:
+    def detectCycle(self, head):
+        # Step 1: Initialize pointers
+        slow, fast = head, head
+        
+         # Step 2: Detect if there is a cycle
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                break  # Cycle detected
+        
+        # Step 3: Check for no cycle
+        if not fast or not fast.next:
+            return None  # No cycle
+        
+         # Step 4: Find the starting node of the cycle
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+        
+        return slow  # Return the starting node of the cycle
+        
