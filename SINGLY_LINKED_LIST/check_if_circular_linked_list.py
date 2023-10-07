@@ -22,7 +22,7 @@ head.next.next.next = head
 
 is_circular = is_circular_linked_list(head)
 
-print("is it circular?", is_circular)  # Prints True
+print("is it circular??", is_circular)  # Prints True
 
 
 
