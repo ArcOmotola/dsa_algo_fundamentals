@@ -32,7 +32,6 @@ def delete_node(head, node_to_delete):
 
 
 
-
 head = Node(1)
 head.next = Node(2)
 head.next.next = Node(3)

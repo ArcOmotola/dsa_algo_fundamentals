@@ -1,11 +1,9 @@
-def reverse_linked_list(head):
-  previous = None
-  current = head   
+def removeElements(head, val): 
+  dummy = ListNode(next=head)
+  prev, curr = dummy, head
 
-  while current is not None:
-    next = current.next
-    current.next = previous
-    previous = current
-    current = next
 
-  return previous
+  while curr:
+    nxt = curr.next
+
+    

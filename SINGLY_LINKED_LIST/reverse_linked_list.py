@@ -9,3 +9,4 @@ def reverse_linked_list(head):
     current = next
 
   return previous
+     
